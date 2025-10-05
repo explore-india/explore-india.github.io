@@ -474,59 +474,100 @@
         }
 
         /* Contact Section */
-        .contact {
-            background: var(--light);
-        }
+.contact {
+  background: linear-gradient(135deg, #f9fafc, #fff7f0);
+  text-align: center;
+  padding: 80px 0;
+}
 
-        .contact-content {
-            display: flex;
-            gap: 50px;
-        }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
 
-        .contact-info {
-            flex: 1;
-        }
+.contact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
 
-        .contact-info h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 
-        .contact-info p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
+.contact-card i {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
 
-        .contact-details {
-            margin-top: 30px;
-        }
+.contact-card h4 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.contact-card p,
+.contact-card a {
+  color: var(--text-light);
+  font-size: 1rem;
+  text-decoration: none;
+}
 
-        .contact-item i {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
+.contact-card a:hover {
+  color: var(--secondary);
+}
 
-        .contact-form {
-            flex: 1;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
+/* Note / Owner Message */
+.contact-note {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  max-width: 750px;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
+.contact-note h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.contact-note p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.contact-note h4 {
+  color: var(--secondary);
+  margin-bottom: 5px;
+}
+
+.contact-note span {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
         .form-group {
             margin-bottom: 20px;
@@ -899,43 +940,54 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with us to plan your next adventure in India.</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Start Your Journey</h3>
-                    <p>We're here to help you plan the perfect trip to India. Contact us with any questions or to get started with your booking.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Address</h4>
-                                <p>Sector 39, Faridabad, India</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+91 9560147286</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>exploreindia.contact@gamil.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>We’d love to help you plan your next unforgettable journey across India.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h4>Visit Us</h4>
+        <p>Sector 39, Faridabad, India</p>
+      </div>
+
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h4>Call Us</h4>
+        <p><a href="tel:+919560147286">+91 9560147286</a></p>
+      </div>
+
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h4>Email Us</h4>
+        <p><a href="mailto:exploreindia.contact@gmail.com">exploreindia.contact@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <h4>WhatsApp</h4>
+        <p><a href="https://wa.me/919560147286" target="_blank">Chat with us</a></p>
+      </div>
+    </div>
+
+    <div class="contact-note">
+      <h3>Let’s Start Your Journey</h3>
+      <p>
+        Whether it’s a cultural tour, a student expedition, or an adventure trek — our team at
+        <strong>ExploreIndia</strong> is here to make it happen. We ensure safe, enjoyable, and meaningful
+        travel experiences across the heart of India.
+      </p>
+      <h4>- Amit Kumar Mishra</h4>
+      <span>Founder & Owner, ExploreIndia</span>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Footer -->
     <footer>
